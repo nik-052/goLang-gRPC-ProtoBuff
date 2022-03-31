@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package personBio;
+
+option go_package = "./;personBiopb";
+
+message personRequest{
+    int32 id = 1;
+    string name = 2;
+    int32 age =3;
+    string gender = 4;
+}
+
+message personResponse{
+    int32 id = 1;
+    string name = 2;
+    int32 age =3;
+    string gender = 4;
+}
+
+service personService{
+    rpc perService(personRequest) returns(personResponse){};
+}
